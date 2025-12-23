@@ -1,0 +1,44 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/frontend/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/frontend/index.html"
+    },
+    {
+      "source": "/explore",
+      "destination": "/frontend/explore.html"
+    },
+    {
+      "source": "/explore.html",
+      "destination": "/frontend/explore.html"
+    },
+    {
+      "source": "/journal",
+      "destination": "/frontend/journal.html"
+    },
+    {
+      "source": "/journal.html",
+      "destination": "/frontend/journal.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/frontend/about.html"
+    },
+    {
+      "source": "/help",
+      "destination": "/frontend/help.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/$1"
+    }
+  ]
+}

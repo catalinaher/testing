@@ -1,0 +1,9 @@
+{
+  "name": "consee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Consee - Letterboxd for concerts (INST377 final)",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0"
+  }
+}

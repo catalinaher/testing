@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consee | Explore</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="./index.html">Consee</a>
+      <a href="./index.html">Home</a>
+      <a href="./explore.html">Explore</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./about.html">About</a>
+      <a href="./help.html">Help</a>
+    </nav>
+  </header>
+
+  <main class="grid" style="gap:18px;">
+    <section class="card">
+      <h1>Explore</h1>
+      <p>Search concerts, then add a review for an event. This is your core functionality page.</p>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2 style="margin:0 0 10px;">Find an Event</h2>
+        <form id="exploreSearch" class="grid" style="gap:12px;">
+          <div>
+            <label>Artist</label>
+            <input id="xArtist" placeholder="e.g., Billie Eilish" />
+          </div>
+          <div>
+            <label>Location (City)</label>
+            <input id="xLocation" placeholder="e.g., Madison" />
+          </div>
+          <button type="submit">Search</button>
+        </form>
+        <div id="xEvents" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 10px;">Write a Review</h2>
+        <form id="reviewForm" class="grid" style="gap:12px;">
+          <div class="small">Pick an event from the left — it will fill in Event ID/Artist/Venue/Date. Then add your username and review.</div>
+          <input id="eventId" placeholder="Event ID" readonly />
+          <input id="artistName" placeholder="Artist" readonly />
+          <input id="venueName" placeholder="Venue" readonly />
+          <input id="eventDate" placeholder="Date" readonly />
+
+          <div>
+            <label>Username</label>
+            <input id="username" placeholder="e.g., cat_herrera" />
+          </div>
+
+          <div>
+            <label>Rating (1–5)</label>
+            <select id="rating">
+              <option>5</option><option>4</option><option>3</option><option>2</option><option>1</option>
+            </select>
+          </div>
+          <div>
+            <label>Review</label>
+            <textarea id="reviewText" placeholder="What was it like?"></textarea>
+          </div>
+          <button type="submit">Post Review</button>
+        </form>
+        <div id="reviewStatus" class="small" style="margin-top:10px;"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/explore.js"></script>
+</body>
+</html>

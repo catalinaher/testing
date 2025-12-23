@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consee | Journal</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="./index.html">Consee</a>
+      <a href="./index.html">Home</a>
+      <a href="./explore.html">Explore</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./about.html">About</a>
+      <a href="./help.html">Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>Journal</h1>
+      <p>Your saved concert reviews in one place (Letterboxd-style).</p>
+
+      <div class="journal-controls" style="margin-top:12px;">
+        <input id="usernameFilter" placeholder="Filter by username (optional)" />
+        <button id="refreshBtn" type="button">Refresh</button>
+        <span id="count" class="small"></span>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <div id="grid" class="reviewGrid"></div>
+      <div id="empty" class="small" style="margin-top:10px;"></div>
+    </section>
+  </main>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/journal.js"></script>
+</body>
+</html>

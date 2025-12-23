@@ -1,0 +1,182 @@
+:root {
+  --bg: #0f1115;
+  --card: #171a21;
+  --text: #e9eef7;
+  --muted: #a7b0c0;
+  --accent: #7c5cff;
+  --border: rgba(255,255,255,0.08);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(15,17,21,0.8);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+nav a:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+nav .brand { color: var(--text); font-weight: 700; margin-right: auto; }
+
+main {
+  max-width: 56.25rem;
+  margin: 24px auto;
+  padding: 0 18px 40px;
+}
+
+h1 { font-size: 28px; margin: 0 0 12px; }
+p { color: var(--muted); line-height: 1.6; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 850px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+label { display:block; font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+}
+textarea { min-height: 90px; resize: vertical; }
+
+button {
+  border: 0;
+  background: var(--accent);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover { filter: brightness(1.05); }
+
+.small { font-size: 13px; color: var(--muted); }
+.list { display:flex; flex-direction:column; gap:12px; margin-top: 12px; }
+.item { padding: 12px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); }
+.row { display:flex; gap: 10px; align-items:center; flex-wrap: wrap; }
+.badge { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+
+.swiper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.slideCard {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+}
+
+.slideTitle { font-weight: 800; font-size: 18px; }
+.slideMeta { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+/* Home layout: make the 2-column block feel like Explore (not stretched) */
+.home .grid-2 {
+  /* keep it centered and capped */
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* If you want even tighter cards on huge screens */
+@media (min-width: 1100px) {
+  .home .grid-2 {
+    max-width: 860px;
+  }
+}
+
+/* Mobile: stack */
+@media (max-width: 850px) {
+  .home .grid-2 {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Also cap the Featured slider card width to match */
+.home #featuredSwiper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Make Home sections align to the same content width */
+.home main > section.card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+/* Journal (Letterboxd-like grid) */
+.journal-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.journal-controls input { max-width: 260px; }
+
+.reviewGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) { .reviewGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .reviewGrid { grid-template-columns: 1fr; } }
+
+.reviewCard {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.reviewCard h3 { margin: 0; font-size: 16px; }
+.reviewCard .meta { color: var(--muted); font-size: 13px; }
+.reviewCard .text { font-size: 14px; line-height: 1.5; }
+.reviewCard .stars { font-size: 13px; color: var(--text); }
